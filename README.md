@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Horizon Banking 💼
 
-## Getting Started
+A modern fintech **SaaS platform** built with Next.js that unifies multiple bank accounts, provides real-time transaction insights, and enables smooth fund transfers. This repo includes the complete source code powering the JavaScript Mastery tutorial.
 
-First, run the development server:
+---
+## ⚙️ Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework**: Next.js (React-based SSR)
+- **Language**: TypeScript  
+- **Backend Services**:
+  - Appwrite (database & auth)
+  - Plaid (bank account linking)
+  - Dwolla (fund transfers)
+- **UI & Validation**:
+  - TailwindCSS (styles)
+  - React Hook Form + Zod (form validation)
+- **Charts**: Chart.js
+- **Components**: shadcn/ui
+- Monitoring: Sentry
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Secure Authentication** (SSR-based, with proper validations)  
+- **Bank Account Integration** using Plaid API  
+- **Overview Dashboard**: Consolidated balance, spending insights, charts  
+- **Transaction History**: Filterable, paginated transaction logs  
+- **Fund Transfers**: Send money via Dwolla integration  
+- **Responsive Design**: Supports desktop to mobile views  
+- **Live Sync**: Real-time updates across all user sessions  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Quick Start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the project**
+    ```bash
+    git clone https://github.com/adrianhajdin/banking.git
+    cd banking
+    ```
+2. **Install dependencies**
+    ```bash
+    npm install
+    ```
+3. **Setup environment variables**  
+   Copy `.env.example` to `.env` and fill in your credentials:
+    ```env
+    NEXT_PUBLIC_SITE_URL=
+    NEXT_PUBLIC_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+    NEXT_PUBLIC_APPWRITE_PROJECT=
+    APPWRITE_DATABASE_ID=
+    APPWRITE_USER_COLLECTION_ID=
+    APPWRITE_BANK_COLLECTION_ID=
+    APPWRITE_TRANSACTION_COLLECTION_ID=
+    APPWRITE_SECRET=
+    PLAID_CLIENT_ID=
+    PLAID_SECRET=
+    PLAID_ENV=
+    PLAID_PRODUCTS=
+    PLAID_COUNTRY_CODES=
+    DWOLLA_KEY=
+    DWOLLA_SECRET=
+    DWOLLA_BASE_URL=https://api-sandbox.dwolla.com
+    DWOLLA_ENV=sandbox
+    ```
+4. **Run the app**
+    ```bash
+    npm run dev
+    ```
+5. Visit `http://localhost:3000` to interact with Horizon Banking.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📦 Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` – Start dev server  
+- `npm run build` – Generate production build  
+- `npm run start` – Start production server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
